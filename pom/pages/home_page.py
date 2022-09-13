@@ -54,7 +54,13 @@ class HomePage(BasePages):
 
             if dic[key] == h:
                 self.do_click(key)
-
+                
+                time.sleep(5)
+                dr=driver.current_url
+                print(dr)
+                self.driver.get(dr)
+                element_metod = driver.find_element(By.XPATH,'//*[@id="mainContent"]/index-lobby/section[1]/div/div/section[2]')
+                self.do_click(element_metod)
 
 
 
