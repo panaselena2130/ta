@@ -11,3 +11,9 @@ class BasePages:
 
     def do_click(self, locator):
         self.wait.until(ec.element_to_be_clickable(locator)).click()
+        
+        
+    def do_current_url(self,driver):
+       g = driver.current_url
+
+       return g
