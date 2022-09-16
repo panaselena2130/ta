@@ -1,3 +1,6 @@
+import time
+
+from selenium.webdriver.chrome import webdriver
 from selenium.webdriver.common.by import  By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
@@ -14,6 +17,10 @@ class HomePage(BasePages):
 
     def load_page(self):
         self.driver.get('https://www.tase.co.il/en/')
+
+
+
+
 
 
     def login(self):
@@ -54,13 +61,16 @@ class HomePage(BasePages):
 
             if dic[key] == h:
                 self.do_click(key)
-                
-                time.sleep(5)
-                dr=driver.current_url
-                print(dr)
-                self.driver.get(dr)
+                time.sleep(2)
+
+                a=self.do_current_url(driver)
+
+                self.driver.get(a)
+
                 element_metod = driver.find_element(By.XPATH,'//*[@id="mainContent"]/index-lobby/section[1]/div/div/section[2]')
                 self.do_click(element_metod)
+
+
 
 
 
