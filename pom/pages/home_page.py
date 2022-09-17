@@ -10,6 +10,7 @@ from pom.pages.base_page import BasePages
 class HomePage(BasePages):
 
 
+
     def __init__(self,driver):
         # super(HomePage, self).__init__(driver)
         super(HomePage, self).__init__(driver)
@@ -20,9 +21,6 @@ class HomePage(BasePages):
 
 
 
-
-
-
     def login(self):
         self.do_click()
 
@@ -30,7 +28,7 @@ class HomePage(BasePages):
     def req_index(self,driver):
         spisok_index = []
         spisok = driver.find_elements(By.XPATH, '//*[@id="trades_panel1"]/article/div[1]/top-indices/table/tbody/tr')
-
+        
         for s in spisok:
             spisok_index.append(s.text)
 
@@ -67,8 +65,16 @@ class HomePage(BasePages):
 
                 self.driver.get(a)
 
-                element_metod = driver.find_element(By.XPATH,'//*[@id="mainContent"]/index-lobby/section[1]/div/div/section[2]')
-                self.do_click(element_metod)
+                
+                self.do_click(locator=(By.XPATH,'//*[@id="mainContent"]/index-lobby/section[1]/div/div/section[2]'))
+                self.do_click(locator=(By.XPATH, '//*[@id="more_madad_nav"]/ul/li[1]/ul/li[4]/a'))
+                self.do_click(locator=(By.CSS_SELECTOR, '#mainContent > index-lobby > index-composition > index-weight > gridview-lib > div > div.container > div > filter-data > div > div.table_sorting_box > div > div.table_sorting_separator.no_border > div > label:nth-child(4)'))
+
+
+
+
+
+
 
 
 
