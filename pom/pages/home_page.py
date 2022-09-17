@@ -28,7 +28,7 @@ class HomePage(BasePages):
     def req_index(self,driver):
         spisok_index = []
         spisok = driver.find_elements(By.XPATH, '//*[@id="trades_panel1"]/article/div[1]/top-indices/table/tbody/tr')
-        
+
         for s in spisok:
             spisok_index.append(s.text)
 
@@ -65,15 +65,11 @@ class HomePage(BasePages):
 
                 self.driver.get(a)
 
-                
+
                 self.do_click(locator=(By.XPATH,'//*[@id="mainContent"]/index-lobby/section[1]/div/div/section[2]'))
                 self.do_click(locator=(By.XPATH, '//*[@id="more_madad_nav"]/ul/li[1]/ul/li[4]/a'))
                 self.do_click(locator=(By.CSS_SELECTOR, '#mainContent > index-lobby > index-composition > index-weight > gridview-lib > div > div.container > div > filter-data > div > div.table_sorting_box > div > div.table_sorting_separator.no_border > div > label:nth-child(4)'))
-
-
-
-
-
+                self.do_click(locator=(By.CSS_SELECTOR, '#mainContent > index-lobby > index-composition > index-market-data > gridview-lib > div > div.container > div > div > div.table_page_table_container > table > thead > tr.sort-btns > td:nth-child(6) > ul > li:nth-child(2) > button'))
 
 
 
