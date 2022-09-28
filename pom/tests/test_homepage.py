@@ -5,6 +5,8 @@ def test_login(driver):
     print('___________')
     homepage = HomePage(driver)
     homepage.load_page()
+
+
     
 
     print(homepage.text_of_list_Ind_Homepage())

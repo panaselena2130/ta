@@ -46,6 +46,9 @@ class HomePage(BasePages):
         all = self.list_of_Ind_Homepage()
 
         d_text=[i.text for i in all]
+        for i in d_text:
+            if i in d_text:
+                pass
 
         return ",".join(d_text)
 
@@ -68,6 +71,7 @@ class HomePage(BasePages):
         all_relat = self.list_of_relat_company()
 
         d_relat_text=[i.text for i in all_relat]
+
 
         return ",".join(d_relat_text)
 
