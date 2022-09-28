@@ -49,6 +49,8 @@ class HomePage(BasePages):
 
         return ",".join(d_text)
 
+
+
     def major_data(self):
         self.do_click('xpath',self.locator_TA_125,'TA-125')
         self.do_click('xpath',self.locator_More_about,'More_About')
@@ -87,6 +89,7 @@ class HomePage(BasePages):
         text_file=open("file1.txt","w")
         for index in e:
             text_file.write(index+ ' ' + '\n')
+
         text_file.close()
 
 
