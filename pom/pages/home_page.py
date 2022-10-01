@@ -33,7 +33,7 @@ class HomePage(BasePages):
         self.locator_Turn_up_down:str = '#mainContent > index-lobby > index-composition > index-market-data > gridview-lib > div > div.container > div > div > div.table_page_table_container > table > thead > tr.sort-btns > td:nth-child(6) > ul > li:nth-child(2) > button'
         self.locator_Company:str = '//*[@id="mainContent"]/index-lobby/index-composition/index-market-data/gridview-lib/div/div[2]/div/div/div[2]/table/tbody'
 
-
+        self.expected_list = ['Index\nTA-35\nValue\n1,837.23\nDown\n-2.05%', 'Index\nTA-125 Fossil Free\nValue\n1,798.79\nDown\n-1.79%', 'Index\nTA-125\nValue\n1,883.93\nDown\n-1.79%', 'Index\nTA Finance\nValue\n3,015.93\nDown\n-2.64%', 'Index\nCleantech\nValue\n787.61\nDown\n-0.62%', 'Index\nTA-Retail\nValue\n1,340.43\nDown\n-0.28%', 'Index\nTA Sector-Balance\nValue\n2,129.63\nDown\n-1.38%', 'Index\nAll-Bond\nValue\n365.97\nDown\n-0.25%', 'Index\nBond-CPI A\nValue\n343.06\nDown\n-0.52%', 'Index\nTel-Bond 60\nValue\n352.92\nDown\n-0.29%']
 
     def load_page(self):
         self.driver.get('https://www.tase.co.il/en/')
@@ -46,12 +46,13 @@ class HomePage(BasePages):
         all = self.list_of_Ind_Homepage()
 
         d_text=[i.text for i in all]
-        print(d_text,"D_TEXT",type(d_text))
-        for i in d_text:
-            if i in d_text:
-                pass
-
-        return ",".join(d_text)
+        return d_text
+        # print(d_text,"D_TEXT",type(d_text))
+        # for i in d_text:
+        #     if i in d_text:
+        #         pass
+        #
+        # return ",".join(d_text)
 
 
 
