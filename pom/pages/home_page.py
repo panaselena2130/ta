@@ -15,7 +15,7 @@ class HomePage(BasePages):
     def __init__(self, driver):
         super(HomePage, self).__init__(driver)
         self.driver = driver
-        #self.locator_home_page: str = '//*[@id="trades_panel1"]/article/div[1]/top-indices/table/tbody'
+
         self.locator_home_page: str = '//*[@id="trades_panel1"]/article/div[1]/top-indices/table/tbody/tr'
         self.locator_TA_35: str = '//*[@id="trades_panel1"]/article/div[1]/top-indices/table/tbody/tr[1]/td[1]/a'
         self.locator_TA_125_Fossill: str = '//*[@id="trades_panel1"]/article/div[1]/top-indices/table/tbody/tr[2]/td[1]/a'
@@ -46,11 +46,13 @@ class HomePage(BasePages):
         all = self.list_of_Ind_Homepage()
 
         d_text=[i.text for i in all]
+        print(d_text,"D_TEXT",type(d_text))
         for i in d_text:
             if i in d_text:
                 pass
 
         return ",".join(d_text)
+
 
 
 
