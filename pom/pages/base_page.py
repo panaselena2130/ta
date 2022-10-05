@@ -31,10 +31,12 @@ class BasePages:
 
 
 
+    def get_text_from_webelements(self,elements:List[WebElement])->List[str]:
+        return [element.text for element in elements]
 
 
 
-
-
-
+    def get_element_by_text(self,elements:List[WebElement],name: str)->WebElement:
+        name = name.lower()
+        return [element for element in elements if element.text == name][0]
 

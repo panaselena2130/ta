@@ -29,3 +29,7 @@ for t in lis:
 assert lis==lis1
 
 
+string = 'lena seva misha oles'
+
+if 'lena' in string:
+    print('here')
