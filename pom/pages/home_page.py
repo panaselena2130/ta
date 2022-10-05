@@ -9,6 +9,8 @@ from pom.pages.base_page import BasePages
 from typing import List
 from selenium.webdriver.remote.webelement import WebElement
 
+from pom.pages.utils import Utils
+
 
 class HomePage(BasePages):
 
@@ -44,15 +46,9 @@ class HomePage(BasePages):
     def text_of_list_Ind_Homepage(self) -> str:
 
         all = self.list_of_Ind_Homepage()
+        d_text=self.get_text_from_webelements(all)
+        return Utils.join_strings(d_text)
 
-        d_text=[i.text for i in all]
-        return d_text
-        # print(d_text,"D_TEXT",type(d_text))
-        # for i in d_text:
-        #     if i in d_text:
-        #         pass
-        #
-        # return ",".join(d_text)
 
 
 
@@ -72,29 +68,19 @@ class HomePage(BasePages):
     def text_of_list_relat_company(self) -> str:
 
         all_relat = self.list_of_relat_company()
-
         d_relat_text=[i.text for i in all_relat]
-
-
-        return ",".join(d_relat_text)
+        return Utils.join_strings(d_relat_text)
 
     def output_text_file(self):
         text=self.text_of_list_relat_company()
         e=text.split()
+        declaim=[i for i in e if i !='לפעולות' and (i != 'לינקים' and i!='שונות')]
+        print(declaim,'DECL')
 
-        for r in e:
-             if r ==  'לפעולות':
-                e.remove(r)
-        for r in e:
-             if r ==  'לינקים':
-                e.remove(r)
-        for r in e:
-             if r == 'שונות':
-                 e.remove(r)
 
 
         text_file=open("file1.txt","w")
-        for index in e:
+        for index in declaim:
             text_file.write(index+ ' ' + '\n')
 
         text_file.close()
