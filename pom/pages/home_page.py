@@ -73,8 +73,8 @@ class HomePage(BasePages):
 
     def output_text_file(self):
         text=self.text_of_list_relat_company()
-        e=text.split()
-        declaim=[i for i in e if i !='לפעולות' and (i != 'לינקים' and i!='שונות')]
+        e=text.split('\n')
+        declaim=[i for i in e if i != 'לינקים לפעולות שונות']
         print(declaim,'DECL')
 
 
