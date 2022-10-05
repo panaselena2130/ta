@@ -2,6 +2,7 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.wait import WebDriverWait
 
 from pom.pages.base_page import BasePages
@@ -15,6 +16,10 @@ if __name__ == '__main__':
     driver.maximize_window()
     driver.get('https://www.tase.co.il/en/market_data/index/137/components/index_weight')
 
+
+
+
+
     spisok = WebDriverWait(driver, 3).until(ec.element_to_be_clickable((By.CSS_SELECTOR,
                                                                         '#mainContent > index-lobby > index-composition > index-weight > gridview-lib > div > div.container > div > filter-data > div > div.table_sorting_box > div > div.table_sorting_separator.no_border > div > label:nth-child(4)')))
     spisok.click()
@@ -26,7 +31,7 @@ if __name__ == '__main__':
 
 
     spisok_t.click()
-    # data = None
+
     for i in spisok_comp:
         a = i.text
 

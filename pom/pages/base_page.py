@@ -14,7 +14,10 @@ class BasePages:
     def webelement_by(self, find_by: str) -> dict:
         find_by = find_by.lower()
         locating = {'xpath': By.XPATH,
-                 'css': By.CSS_SELECTOR}
+                 'css': By.CSS_SELECTOR,
+                 'class':By.CLASS_NAME,
+                    'name':By.NAME
+                    }
 
         return locating[find_by]
 
@@ -32,11 +35,18 @@ class BasePages:
 
 
     def get_text_from_webelements(self,elements:List[WebElement])->List[str]:
-        return [element.text for element in elements]
+        element_list = []
+        for element in elements:
+            element_list.append(element.text)
+            print(element_list,'ELEMENT_LIST')
+
+        return element_list
 
 
 
     def get_element_by_text(self,elements:List[WebElement],name: str)->WebElement:
-        name = name.lower()
-        return [element for element in elements if element.text == name][0]
+        name=name.lower()
+
+
+        return [element for element in elements if element.text.lower() == name][0]
 
