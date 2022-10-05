@@ -15,6 +15,6 @@ def test_login(driver):
 
     homepage.major_data()
     print(homepage.text_of_list_relat_company())
-    (homepage.output_text_file())
+    homepage.output_text_file()
 
    
