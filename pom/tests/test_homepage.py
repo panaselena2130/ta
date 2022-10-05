@@ -7,19 +7,14 @@ def test_login(driver):
     homepage.load_page()
 
 
+    
 
     print(homepage.text_of_list_Ind_Homepage())
 
-
-
-
-
-
-
-    # assert homepage.expected_list == homepage.text_of_list_Ind_Homepage()
+    assert homepage.expected_list == homepage.text_of_list_Ind_Homepage()
 
     homepage.major_data()
-    print(homepage.text_of_list_relat_company(),'d_relat_text',type(homepage.text_of_list_relat_company()))
+    print(homepage.text_of_list_relat_company())
+    (homepage.output_text_file())
 
-    homepage.output_text_file()
-
+   
