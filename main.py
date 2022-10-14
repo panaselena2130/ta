@@ -3,8 +3,6 @@ from selenium.webdriver.common.by import By
 
 
 
-
-
 from pom.tests.test_homepage import test_login
 
 
