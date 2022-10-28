@@ -15,6 +15,15 @@ if __name__ == '__main__':
     driver = webdriver.Chrome(executable_path='Source/chromedriver.exe')
     driver.maximize_window()
     driver.get('https://www.tase.co.il/en/market_data/index/137/components/index_weight')
+    # driver.find_elements(By.CSS_SELECTOR,"#mainContent > index-lobby > index-composition > index-weight > gridview-lib > div > div.container > div > filter-data > div > div.table_sorting_box > div > div.table_sorting_separator.no_border > div > label:nth-child(4)")
+    # try:
+    #     title=driver.title
+    #     assert 'TA-125' in title
+    #     print("Assertion_test_pass")
+    #     print(title)
+    # except Exception as e:
+    #     print("Assertion test failed", format(e))
+
 
 
 
@@ -39,30 +48,18 @@ if __name__ == '__main__':
         data = a.split('\n')
 
 
-
         for g in data:
              if g == 'לינקים לפעולות שונות':
                  data.remove(g)
-
-
-
 
         for g in data:
              if g == 'DL':
                  data.remove(g)
 
 
-
-
         for g in data:
             if g == 'MM':
                 data.remove(g)
-
-
-
-
-
-
 
 
         f=open('lena.txt','w')
