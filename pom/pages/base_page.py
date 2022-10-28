@@ -49,6 +49,7 @@ class BasePages:
 
     def get_text_from_webelements(self,elements:List[WebElement])->List[str]:
         return [element.text for element in elements]
+    
 
 
 
